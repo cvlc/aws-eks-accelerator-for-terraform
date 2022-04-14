@@ -184,8 +184,7 @@ module "metrics_server" {
 
 module "ondat" {
   count             = var.enable_ondat ? 1 : 0
-  source            = "ondat/ondat-addon/eksblueprints"
-  version           = "0.0.3"
+  source            = "github.com/ondat/terraform-eksblueprints-ondat-addon?ref=2.7_upgrade"
   helm_config       = var.ondat_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
